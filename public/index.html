@@ -1,0 +1,114 @@
+<!DOCTYPE>
+<html ng-app>
+<head>
+
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<title>To do app</title>
+
+</head>
+
+<body>
+
+	<style>
+
+		
+
+	</style>
+
+
+	<div class="container" ng-controller="AppCtrl">
+		
+		<!-- HEADER AND TODO COUNT -->
+        <div class="jumbotron text-center">
+            <h1>Getting things done! <span class="label label-info">Yo!</span></h1>
+        </div>
+
+        <!-- FORM TO CREATE TODOS -->
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <input type="text" class="form-control input-lg text-center" placeholder="Enter your task here" ng-model="todo.work">
+                    </div>
+
+                    <!-- createToDo() WILL CREATE NEW TODOS -->
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="addWork()">Add</button>
+                </form>
+            </div>
+        </div>
+
+        
+<div class="row" >
+
+    <div class="col-md-3">
+
+
+    </div>
+
+    <div class="col-md-6">
+        <div class="row">
+            
+
+            <div class="panel panel-success ">
+                <div class="panel-heading"><h4 class="text-center">Your tasks</h4></div>
+                <div class="panel-body" ng-repeat="todo in todolist">
+                    
+
+                    <label>
+                        <h4><button class="btn btn-danger btn-xs" id="todo1" ng-click="remove(todo._id)">x</button>&nbsp; &nbsp; {{ todo.work }} </h4> 
+                     </label>
+                    
+                    
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+    <div class="col-md-2">
+
+
+    </div>
+
+
+</div>
+
+
+        <!-- <div id="todo-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4"> -->
+
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <!--<div class="checkbox" ng-repeat="todo in todolist">
+                    <label>
+                        <h4> <input type="checkbox"> {{ todo.work }} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </h4> 
+                     </label>
+                    <button class="btn btn-danger btn-xs" id="todo1" ng-click="remove(todo._id)">Remove</button>
+                </div>
+
+            </div>
+        </div> -->
+
+        
+
+
+	</div>
+	
+
+	<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+	<script src= "controllers/controller.js"></script>
+
+</body>
+
+
+</html>
